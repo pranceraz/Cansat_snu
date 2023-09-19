@@ -8,7 +8,7 @@ also make a way to add headers to the columns
 find the arduino port or is it XBEE???
 
 '''
-arduinoport = "" # idk this well need to know the port for this  apparantly some COM5 Format
+arduinoport = "COM3" # idk this well need to know the port for this  apparantly some COM5 Format
 baud = 9600 #baud rate
 file_n = "datatest.csv" # temp file name
 collect = True # data collect state
