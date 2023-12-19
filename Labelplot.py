@@ -5,16 +5,21 @@ from matplotlib.animation import FuncAnimation
 
 x= []
 y= []
+csv_file_path = "sample.csv"
 
-#with open('hw_200.csv','r') as csvfile: 
-#lines = csv.reader(csvfile, delimiter=',') 
-    
+   
+
+
 index = count()
-
 def animate(i):
-    
-        x.append(next(index)) 
-        y.append(float(random.randint(0,5))) 
+        with open(csv_file_path,'r') as csvfile: 
+                csv_reader = csv.reader(csvfile)      
+                for row in csv_reader:
+                        a=row[0]
+                        y.append(float(a))
+                        x.append(next(index)) 
+                        print(y)
+
         plt.cla
         plt.plot(x,y)
 
