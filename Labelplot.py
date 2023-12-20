@@ -7,22 +7,24 @@ x= []
 y= []
 csv_file_path = "sample.csv"
 
-   
 
-
-index = count()
 def animate(i):
+        x_val = 1000
         with open(csv_file_path,'r') as csvfile: 
                 csv_reader = csv.reader(csvfile)      
                 for row in csv_reader:
                         a=row[0]
-                        y.append(float(a))
-                        x.append(next(index)) 
-                        print(y)
+                        
+                        y.append(a)
+                        x.append(x_val)
+                        x_val+=1
+
+                        print(x)
 
         plt.cla
         plt.plot(x,y)
-
+# gotta add vals to csv file to make it work longer 
+# change x axis to UTC 
 ani = FuncAnimation(plt.gcf(),animate,interval= 1000)
 
 
